@@ -1,0 +1,15 @@
+[Order to Unlock]
+Tibbs > Tullina > Nenet
+Karst > Huck    > Niles > Vinderi > Gianna
+(Isla does not introduce any new rogues)
+
+[Level 5 Rogues]
+1. Karst > Lockpicking
+2. Tibbs > Brute Force
+3. Nenet > Perception
+4. Vinderi > Demolition
+5. Vinderi > Trap Disarmament
+6. Niles > Counter-Thaumaturgy
+7. Tullina > Agility
+8. Gianna > Deception
+9. Isla > Engineering

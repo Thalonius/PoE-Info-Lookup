@@ -1,0 +1,50 @@
+[Aisling]
+Research > Fortification > Transport
+
+[Cameria]
+Transport > Intervention
+
+[Elreon]
+Research
+
+[Gravicius]
+All are fine
+
+[Guff]
+Just nope..
+
+[Haku]
+Maybe Fortification?
+
+[Hillock]
+Fortification (Armour) > Research (Flask) > Transportation (Weapon)
+
+[It That Fled]
+Research > Fortification
+
+[Janus]
+Research > Intervention
+
+[Jorgin]
+Research > Fortification
+
+[Korell]
+Fortification
+
+[Leo]
+Research > Fortification > Transportation
+
+[Riker]
+Any
+
+[Rin]
+Research > Fortification
+
+[Tora]
+Fortification > Research
+
+[Vagan]
+Fortification > Research
+
+[Vorici]
+Research > Transportation > Fortification
