@@ -1,0 +1,69 @@
+[Movement Boots]
+Normal Boots
+Quicksilver Flask
+Orb of Augmentation
+-> 10% Movement Speed
+
+Magic or Rare Boots with Movement Speed
+Quicksilver Flask
+Orb of Augmentation
+-> X+5% Movement Speed
+
+[Caster Weapon]
+Magic Sceptre/Wand/Rune Dagger
+Normal/Magic/Rare Ruby/Sapphire/Topaz Ring
+Orb of Alteration
+-> Lvl 8/12/20 Wand with Fire/Cold/Lightning Damage
+
+Normal Sceptre/Wand/Rune Dagger/Staff
+Gems with combined 40%+ Quality with Physical/Fire/Cold/Lightning/Chaos tag
+-> Magic Weapon with +1 to Physical/Fire/Cold/Lightning/Chaos Spells
+
+[Melee Weapon]
+Weapon
+Magiv/Rare/Unique Rustic Sash
+Blacksmith's Whetstone
+-> Magic Weapon with Increased Physival Damage depending on Sash Rarity
+
+[Ring]
+Iron Ring
+Red Skill Gem
+-> Ruby Ring
+
+Iron Ring
+Blue Skill Gem
+-> Sapphire Ring
+
+Iron Ring
+Green Skill Gem
+-> Topaz Ring
+
+Amber Amulet (Str)
+Lapis Amulet (Int)
+Orb of Transmutation
+-> Agate Amulet (Str+Int)
+Same for the other combinations
+
+60x Breach Rings
+-> Grasping Mail
+
+[Flask]
+Ruby Flask with Inc Evasion Rating
+Sapphire Flask with Inc Evasion Rating
+Topaz Flask with Inc Evasion Rating
+-> Jade Flask
+
+Ruby Flask with Inc Armour
+Sapphire Flask with Inc Armour
+Topaz Flask with Inc Armour
+-> Granite Flask
+
+2x Enkindling Orb
+Trigger Gem
+Orb of Alchemy
+-> Instilling Orb
+
+4x Instilling Orb
+Trigger Gem
+Orb of Scouring
+-> Enkindling Orb
