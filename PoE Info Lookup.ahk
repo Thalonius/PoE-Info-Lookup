@@ -57,6 +57,7 @@ if A_IsCompiled
     Menu, Tray, NoStandard
 Menu, Tray, Icon, 
 Menu, Tray, Add, Show (Ctrl+i), ShowGUI
+Menu, Tray, Add, Open Config, OpenConfig
 Menu, Tray, Add, Refresh, Refresh
 Menu, Tray, Add, Exit, Exit
 Menu, Tray, Default, Show (Ctrl+i)
@@ -174,6 +175,10 @@ Return
 
 Exit:
 ExitApp
+
+OpenConfig:
+Run %A_ScriptDir%\config.ini
+Return
 
 LoadSelectedFile:
 LoadSelectedFile()
