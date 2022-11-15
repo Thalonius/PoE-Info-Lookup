@@ -1,0 +1,60 @@
+[1 Normal Lab]
+A1 The Lower Prison	Spike traps
+A2 The Crypt Level 1	Spinning blades
+A2 The Chamber of Sins Level 2 Sawblades
+A3 The Crematorium	Furnace traps
+A3 The Catacombs		Blade sentries
+A3 The Imperial Gardens	Dart traps
+
+[2 Cruel Lab]
+A6 The Prison		Spike traps
+A7 The Crypt Level 1	Spinning blades
+A7 The Chamber of Sins Level 2 Sawblades
+
+[3 Merciless Lab]
+A8 The Bath House		Furnace traps
+A9 The Tunnel		Blade sentries
+A10 The Ossuary		Dart traps
+
+[4 Uber Lab]
+Trial of Piercing Truth, Spike traps
+Trial of Swirling Fear, Spinning blades
+Trial of Crippling Grief, Sawblades
+Trial of Burning Rage, Furnace traps
+Trial of Lingering Pain, Blade sentries
+Trial of Stinging Doubt, Dart traps
+
+[5 Extra Keys]
+Charge Disruptors 	Izaro -> 10 charges
+Conduits		Do not click
+Elemental Essence	Do not kill
+Gargoyles		Do not kill
+Fonts		Do not kill
+Idols		All MUST gain full life
+Lieutenants	Do not kill
+Portals		Do not kill
+
+[6 Darkshrines]
+A portal to Izaro appears
+--------
+Be twice blessed -> Additional Enchant, can only be obtained once
+--------
+Courage stands tall -> Massive Shrine (Inc Size/Life/AoE)
+--------
+Death doesn't wait -> Acceleration Shrine (Inc Action Speed/Projectile Speed)
+--------
+Deliver pain exquisite -> Diamond Shrine (Always Crit)
+--------
+Discover what lies within -> Additional Treasure Key
+--------
+Hit hard. Hit once -> Brutal Shrine (Inc Damage, Stun Duration, Knockback)
+--------
+Movement ceases, tension mounts -> Traps disabled in final encounter
+--------
+None shall stop you -> Impenetrable Shrine (Inc Armour/Evasion/ES)
+--------
+Restore that which was lost -> Replenishing Shrine (Life/Mana Reg)
+--------
+The heart quickens, the blood thickens -> Traps deal half damage
+--------
+To the worthy go the spoils -> Additonal Unique Item
