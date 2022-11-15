@@ -41,7 +41,7 @@ if CloseToBubble
     Gui, 2:+AlwaysOnTop -Caption
     Gui, 2:Add, Picture, x0 y0 w64 h64 hwndIcon gRestoreFromBubble
     SetGuiStaticIcon(Icon, "wmploc.dll", 124, 64)
-    Gui, 2:Show, % "Hide X" WinPosX " Y" WinPosY " w50 h50", PoE Info Lookup Bubble1
+    Gui, 2:Show, % "Hide X" WinPosX " Y" WinPosY " w64 h64", PoE Info Lookup Bubble1
     WinSet, Region, 0-4 w58 h58 R58-58, PoE Info Lookup Bubble
 }
 
