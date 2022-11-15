@@ -58,7 +58,7 @@ if A_IsCompiled
 Menu, Tray, Icon, 
 Menu, Tray, Add, Show (Ctrl+i), ShowGUI
 Menu, Tray, Add, Open Config, OpenConfig
-Menu, Tray, Add, Refresh, Refresh
+Menu, Tray, Add, Reload, Reload
 Menu, Tray, Add, Exit, Exit
 Menu, Tray, Default, Show (Ctrl+i)
 Menu, Tray, Icon, wmploc.dll, 124
@@ -123,7 +123,7 @@ if SavePosition
 IniRead, LastSelection, %A_ScriptDir%\config.ini, Session, Last selection, %Empty%
 Return
 
-Refresh:
+Reload:
 Reload
 
 2GuiClose:
