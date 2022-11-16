@@ -19,7 +19,7 @@ Gui, +AlwaysonTop +LastFound
 Gui, Add, DropDownList, x12 y15 section vFileSelection gLoadSelectedFile, %Selection%
 Gui, Add, Text, x+10 ys+3, Search
 Gui, Add, Edit, x+10 ys+0 w185 vInputSearch gOK,
-Gui, Add, ListView,grid x12 y47 h195 w350 -LV0x10 vDataLV gDataLV Sort -Multi List AltSubmit, Name|Description
+Gui, Add, ListView,grid x12 y47 h195 w350 -LV0x10 vDataLV gDataLV Sort List AltSubmit, Name|Description
 Gui, Add, Edit, x+10 yp+0 h195 w250 +ReadOnly +Border vDataText
 
 LoadSelectedFile()
@@ -218,7 +218,7 @@ LoadSelectedFile()
         i += 1
         LV_Add("", NameArr[i], DataArr[i])
     }
-    LoadLineText(1)
+    GuiControl, , DataText, % LoadLineText(1)
 }
 
 OK:
@@ -248,16 +248,27 @@ while i < DataCount
         LV_Add("", NameArr[i], DataArr[i])
 }
 
-LoadLineText(1)
+GuiControl, , DataText, % LoadLineText(1)
 Gui, 1:Show
 Return
 
 DataLV:
-RowNo := LV_GetNext(0, "F")
-LoadLineText(RowNo)
+if (A_GuiEvent = "I")
+{
+    Result =
+    GuiControl, , DataText, 
+    LoadHeaders := LV_GetCount("S") > 1
+    RowNo := LV_GetNext(0)
+    While(RowNo > 0)
+    {
+        Result := Result LoadLineText(RowNo,LoadHeaders)
+        RowNo := LV_GetNext(RowNo)
+    }
+    GuiControl, , DataText, %Result%
+}
 return
 
-LoadLineText(RowNo)
+LoadLineText(RowNo,WithHeader=0)
 {
     global
     if RowNo = 0
@@ -265,7 +276,12 @@ LoadLineText(RowNo)
     if RowNo = 1
         ControlSend, DataLV, ^Home
     LV_GetText(DataTextLine, RowNo, 2)
-    GuiControl, , DataText, %DataTextLine%
+    if WithHeader
+    {
+        LV_GetText(DataTextHeader, RowNo, 1)
+        Return "---" DataTextHeader "---`n" DataTextLine "`n`n"
+    }
+    Return DataTextLine
 }
 
 WM_SYSCOMMAND(wParam)
