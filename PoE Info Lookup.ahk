@@ -15,6 +15,17 @@ Loop, Files, %A_ScriptDir%\Data\*.txt
         Selection := Selection "|"
 }
 
+if A_IsCompiled
+    Menu, Tray, NoStandard
+Menu, Tray, Icon, 
+Menu, Tray, Add, Show (Ctrl+i), ShowGUI
+Menu, Tray, Add, Open Config, OpenConfig
+Menu, Tray, Add, Reload, Reload
+Menu, Tray, Add, Exit, Exit
+Menu, Tray, Default, Show (Ctrl+i)
+Menu, Tray, Icon, wmploc.dll, 124
+Hotkey, ^i, ShowGui
+
 Gui, +AlwaysonTop +LastFound
 Gui, Add, DropDownList, x12 y15 section vFileSelection gLoadSelectedFile, %Selection%
 Gui, Add, Text, x+10 ys+3, Search
@@ -52,17 +63,6 @@ if StartClosed & !StartMinimized
 }
 Else
     Gui, Show, %GuiShowString%
-
-if A_IsCompiled
-    Menu, Tray, NoStandard
-Menu, Tray, Icon, 
-Menu, Tray, Add, Show (Ctrl+i), ShowGUI
-Menu, Tray, Add, Open Config, OpenConfig
-Menu, Tray, Add, Reload, Reload
-Menu, Tray, Add, Exit, Exit
-Menu, Tray, Default, Show (Ctrl+i)
-Menu, Tray, Icon, wmploc.dll, 124
-Hotkey, ^i, ShowGui
 
 if MinimizeToTray
 {
