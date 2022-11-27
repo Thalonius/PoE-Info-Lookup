@@ -52,17 +52,17 @@ if CloseToBubble
     Gui, 2:+AlwaysOnTop -Caption
     Gui, 2:Add, Picture, x0 y0 w64 h64 hwndIcon gRestoreFromBubble
     SetGuiStaticIcon(Icon, "wmploc.dll", 124, 64)
-    Gui, 2:Show, % "Hide X" WinPosX " Y" WinPosY " w64 h64", PoE Info Lookup Bubble1
-    WinSet, Region, 0-4 w58 h58 R58-58, PoE Info Lookup Bubble
+    Gui, 2:Show, % "Hide X" WinPosX " Y" WinPosY " w64 h64", %WindowTitle% Bubble
+    WinSet, Region, 0-4 w58 h58 R58-58, %WindowTitle% Bubble
 }
 
 if StartClosed & !StartMinimized
 {
-    Gui, 1:Show, % "hide " GuiShowString
+    Gui, 1:Show, % "hide " GuiShowString, %WindowTitle%
     GoSub, CloseMainWindow
 }
 Else
-    Gui, Show, %GuiShowString%
+    Gui, 1:Show, %GuiShowString%, %WindowTitle%
 
 if MinimizeToTray
 {
@@ -72,47 +72,13 @@ if MinimizeToTray
 Return
 
 InitSettings:
-IniRead, MinimizeToTray, %A_ScriptDir%\config.ini, General, Minimize to tray, Not initialized
-if (MinimizeToTray = "Not initialized")
-{
-    IniWrite, % False, %A_ScriptDir%\config.ini, General, Minimize to tray
-    MinimizeToTray := False
-}
-
-IniRead, StartMinimized, %A_ScriptDir%\config.ini, General, Start minimized, Not initialized
-if (StartMinimized = "Not initialized")
-{
-    IniWrite, % False, %A_ScriptDir%\config.ini, General, Start minimized
-    StartMinimized := False
-}
-
-IniRead, StartClosed, %A_ScriptDir%\config.ini, General, Start closed, Not initialized
-if (StartClosed = "Not initialized")
-{
-    IniWrite, % False, %A_ScriptDir%\config.ini, General, Start closed
-    StartClosed := False
-}
-
-IniRead, CloseToBubble, %A_ScriptDir%\config.ini, General, Close to bubble, Not initialized
-if (CloseToBubble = "Not initialized")
-{
-    IniWrite, % False, %A_ScriptDir%\config.ini, General, Close to bubble
-    CloseToBubble := False
-}
-
-IniRead, CloseToTray, %A_ScriptDir%\config.ini, General, Close to tray, Not initialized
-if (CloseToTray = "Not initialized")
-{
-    IniWrite, % False, %A_ScriptDir%\config.ini, General, Close to tray
-    CloseToTray := False
-}
-
-IniRead, SavePosition, %A_ScriptDir%\config.ini, General, Save position, Not initialized
-if (SavePosition = "Not initialized")
-{
-    IniWrite, % True, %A_ScriptDir%\config.ini, General, Save position
-    SavePosition := True
-}
+WindowTitle := ReadFromIni("config.ini", "General", "Window Title", "PoE Info Lookup")
+MinimizeToTray := ReadFromIni("config.ini", "General", "Minimize to tray", False)
+StartMinimized := ReadFromIni("config.ini", "General", "Start minimized", False)
+StartClosed := ReadFromIni("config.ini", "General", "Start closed", False)
+CloseToBubble := ReadFromIni("config.ini", "General", "Close to bubble", True)
+CloseToTray := ReadFromIni("config.ini", "General", "Close to tray", False)
+SavePosition := ReadFromIni("config.ini", "General", "Save position", False)
 
 if SavePosition
 {
@@ -165,7 +131,7 @@ if CloseToBubble
 {
     Gui, 1:Show, Hide
     Gui, 2:Show, % "X" WinPosX " Y" WinPosY
-    WinSet, Region, 0-4 w58 h58 R58-58, PoE Info Lookup Bubble
+    WinSet, Region, 0-4 w58 h58 R58-58, %WindowTitle% Bubble
 }
 Else IF CloseToTray
     Gui, 1:Show, Hide
@@ -295,7 +261,17 @@ WM_SYSCOMMAND(wParam)
     }
 }
 
+ReadFromIni(File, Section, Key, Default)
+{
+    IniRead, ReadValue, %File%, %Section%, %Key%, Not Initialized
+    if (ReadValue = "Not Initialized")
+    {
+        IniWrite, %Default%, %File%, %Section%, %Key%
+        ReadValue := Default
+    }
 
+    Return %ReadValue%
+}
 
 SetGuiStaticIcon(ControlHwnd, Filename, IconNumber := 1, IconSize := 0) {
    If !DllCall("PrivateExtractIcons", "Str", Filename, "Int", IconNumber - 1, "Int", IconSize, "Int", IconSize
@@ -331,7 +307,6 @@ GetBitmapFromIcon32Bit(hIcon, Width := 0, Height := 0) {
          Return 0
       Width := NumGet(Buf, 4, "Int")
       , Height := NumGet(Buf, 8, "Int")
-      MsgBox, %Width% - %Height%
    }
    ; Create a device context compatible with the screen.
    If (hdcDest := DllCall("CreateCompatibleDC", "Ptr", 0)) {
